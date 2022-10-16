@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.home {
+  background: linear-gradient(180deg, #0a61b1, #161131 25%);
+}
+
+.lucky-winner::before {
+  animation: spin-clock 24s linear infinite;
+  background-image: url(/public/assets/bg-rays.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  content: "";
+  position: absolute;
+  top: calc(50% - 300px);
+  left: calc(50% - 300px);
+  width: 600px;
+  height: 600px;
+}
+
+.ticket-lights:before,
+.ticket-lights:after {
+  background-position: 50%;
+  background-repeat: no-repeat;
+  content: "";
+  position: absolute;
+}
+
+.ticket-lights::before {
+  animation: spin-clock 24s linear infinite;
+  background-image: url(/public/assets/bg-rays.png);
+  background-size: 100%;
+  height: 400px;
+  left: 15%;
+  top: -90px;
+  width: 400px;
+}
+
+.ticket-lights::after {
+  background-image: url(/public/assets/ticket_glow.png);
+  background-size: contain;
+  height: 100%;
+  left: 0;
+  top: -70px;
+  width: 100%;
+}
+
+
+@-moz-keyframes spin-clock {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin-clock {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-clock {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 599px) {
+  .lucky-winner::before {
+    top: calc(50% - 200px);
+    left: calc(50% - 200px);
+    width: 400px;
+    height: 400px;
+  }
+
+  .ticket-lights::before {
+    top: -90px;
+    left: calc(50% - 200px);
+    width: 400px;
+    height: 400px;
+  }
+
+  .ticket-lights::after {
+    top: -70px;
+    left: calc(50% - 200px);
+    width: 400px;
+    height: 400px;
+  }
+
+}
